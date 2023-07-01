@@ -1,51 +1,77 @@
 <?php
 
-/* Services Custom Post */
-function kolegal_services() {
+/* Expertise Custom Post */
+function kolegal_expertise() {
 	$labels = array(
-		'name'                  => _x( 'Services', 'Post type general name', 'kolegal' ),
-		'singular_name'         => _x( 'Service', 'Post type singular name', 'kolegal' ),
-		'menu_name'             => _x( 'Services', 'Admin Menu text', 'kolegal' ),
-		'name_admin_bar'        => _x( 'Service', 'Add New on Toolbar', 'kolegal' ),
-		'add_new'               => __( 'Add Service', 'kolegal' ),
-		'add_new_item'          => __( 'Add New Service', 'kolegal' ),
-		'featured_image'        => __( 'Service Image', 'kolegal' ),
+		'name'                  => _x( 'Expertise', 'Post type general name', 'kolegal' ),
+		'singular_name'         => _x( 'Expertise', 'Post type singular name', 'kolegal' ),
+		'menu_name'             => _x( 'Expertise', 'Admin Menu text', 'kolegal' ),
+		'name_admin_bar'        => _x( 'Expertise', 'Add New on Toolbar', 'kolegal' ),
+		'add_new'               => __( 'Add Expertise', 'kolegal' ),
+		'add_new_item'          => __( 'Add New Expertise', 'kolegal' ),
+		'featured_image'        => __( 'Expertise Banner Image', 'kolegal' ),
 	);
 	$args = array(
 		'labels'             => $labels,
 		'public'             => true,
-		'description'        => 'Services custom post type.',
-		'rewrite'            => array( 'slug' => 'service' ),
+		'description'        => 'Expertise custom post type.',
+		'rewrite'            => array( 'slug' => 'expertise' ),
 		'menu_position'      => null,
 		'supports'           => array( 'title', 'thumbnail', 'excerpt' ),
 	);
 
-	register_post_type( 'service', $args );
+	register_post_type( 'expertise', $args );
 }
 
-add_action( 'init', 'kolegal_services' );
+add_action( 'init', 'kolegal_expertise' );
 
-/* Services Custom Post */
-function kolegal_success_story() {
+/* client stories Custom Post */
+function kolegal_client_stories() {
 	$labels = array(
-		'name'                  => _x( 'Success Stories', 'Post type general name', 'kolegal' ),
-		'singular_name'         => _x( 'Success Story', 'Post type singular name', 'kolegal' ),
-		'menu_name'             => _x( 'Success Stories', 'Admin Menu text', 'kolegal' ),
-		'name_admin_bar'        => _x( 'Success Story', 'Add New on Toolbar', 'kolegal' ),
-		'add_new'               => __( 'Add Success Story', 'kolegal' ),
-		'add_new_item'          => __( 'Add New Success Story', 'kolegal' ),
+		'name'                  => _x( 'Client Stories', 'Post type general name', 'kolegal' ),
+		'singular_name'         => _x( 'Client Story', 'Post type singular name', 'kolegal' ),
+		'menu_name'             => _x( 'Client Stories', 'Admin Menu text', 'kolegal' ),
+		'name_admin_bar'        => _x( 'Client Story', 'Add New on Toolbar', 'kolegal' ),
+		'add_new'               => __( 'Add Client Story', 'kolegal' ),
+		'add_new_item'          => __( 'Add New Client Story', 'kolegal' ),
+		'featured_image'        => __( 'Story Banner Image', 'kolegal' ),
 	);
 	$args = array(
 		'labels'             => $labels,
 		'public'             => true,
-		'description'        => 'Success Story custom post type.',
-		'rewrite'            => array( 'slug' => 'success-story' ),
+		'description'        => 'Client Story custom post type.',
+		'rewrite'            => array( 'slug' => 'client-story' ),
 		'menu_position'      => null,
 		'supports'           => array( 'title', 'thumbnail', 'excerpt' ),
 	);
 
-	register_post_type( 'success-story', $args );
+	register_post_type( 'client-story', $args );
 }
 
-add_action( 'init', 'kolegal_success_story' );
+add_action( 'init', 'kolegal_client_stories' );
+
+/* Sectors Custom Post */
+function kolegal_sectors() {
+	$labels = array(
+		'name'                  => _x( 'Sectors', 'Post type general name', 'kolegal' ),
+		'singular_name'         => _x( 'Sector', 'Post type singular name', 'kolegal' ),
+		'menu_name'             => _x( 'Sectors', 'Admin Menu text', 'kolegal' ),
+		'name_admin_bar'        => _x( 'Sectors', 'Add New on Toolbar', 'kolegal' ),
+		'add_new'               => __( 'Add New Sector', 'kolegal' ),
+		'add_new_item'          => __( 'Add New Sector', 'kolegal' ),
+		'featured_image'        => __( 'Sector Banner Image', 'kolegal' ),
+	);
+	$args = array(
+		'labels'             => $labels,
+		'public'             => true,
+		'description'        => 'Sectors custom post type.',
+		'rewrite'            => array( 'slug' => 'sector' ),
+		'menu_position'      => null,
+		'supports'           => array( 'title', 'thumbnail' ),
+	);
+
+	register_post_type( 'sector', $args );
+}
+
+add_action( 'init', 'kolegal_sectors' );
 
