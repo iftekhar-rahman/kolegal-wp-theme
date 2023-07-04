@@ -75,3 +75,28 @@ function kolegal_sectors() {
 
 add_action( 'init', 'kolegal_sectors' );
 
+/* Sectors Custom Post */
+function kolegal_free_guides() {
+	$labels = array(
+		'name'                  => _x( 'Free Guides', 'Post type general name', 'kolegal' ),
+		'singular_name'         => _x( 'Free Guide', 'Post type singular name', 'kolegal' ),
+		'menu_name'             => _x( 'Free Guides', 'Admin Menu text', 'kolegal' ),
+		'name_admin_bar'        => _x( 'Free Guides', 'Add New on Toolbar', 'kolegal' ),
+		'add_new'               => __( 'Add New Free Guide', 'kolegal' ),
+		'add_new_item'          => __( 'Add New Free Guide', 'kolegal' ),
+		'featured_image'        => __( 'Free Guide Banner Image', 'kolegal' ),
+	);
+	$args = array(
+		'labels'             => $labels,
+		'public'             => true,
+		'description'        => 'Free Guide custom post type.',
+		'rewrite'            => array( 'slug' => 'free-guide' ),
+		'menu_position'      => null,
+		'supports'           => array( 'title', 'thumbnail', 'excerpt' ),
+	);
+
+	register_post_type( 'free-guide', $args );
+}
+
+add_action( 'init', 'kolegal_free_guides' );
+
